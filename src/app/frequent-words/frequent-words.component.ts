@@ -58,7 +58,7 @@ export class FrequentWordsComponent implements OnInit {
         return { name: kv[0], weight: kv[1] };
       })
       .slice(0, 60);
-    console.log("data", data);
+    console.log("frequent-word", data);
     this.chartOptions.series[0].data = data;
     this.chartOptions.title.text = this.authorAnalysis.author;
   }
