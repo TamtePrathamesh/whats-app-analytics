@@ -226,10 +226,7 @@ export class DataAnalysis {
 
   messages: Message[] = [];
 
-  msg: string[] = [];
-
   emojiCountMap: object = {};
-
 
   hourlyMessageCount: number[] = Array(24).fill(0);
 
@@ -256,7 +253,6 @@ export class DataAnalysis {
     this.weekDayMessageCount[message.date.getDay()] += 1;
 
     this.messages.push(message);
-    this.msg.push(message.message);
   }
 
   ngOnDestory() {}

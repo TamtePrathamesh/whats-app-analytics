@@ -80,6 +80,9 @@ input[type="file"] {
 
 .main-body {
   min-height: calc(100vh - 150px);
+  opacity: 0;
+  transform: translateX(-500px);
+  animation: slideLeft 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s forwards;
 }
 
 .instructions {
@@ -143,8 +146,8 @@ section h2 {
   padding-top: 20px;
 
   .preview-img {
-    max-height: 280px;
-    max-width: 80vw;
+    max-height: 320px;
+    max-width: 90vw;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 }
@@ -226,7 +229,9 @@ footer {
   position: relative;
 }
 
-$demo-btn-color: rgb(34, 34, 34);
+$demo-btn-color: rgb(34, 34, 34);;
+
+$demo-ripple-btn-color: rgb(34, 34, 34);;
 
 .demo-button-wrapper {
   position: absolute;
@@ -242,7 +247,7 @@ $demo-btn-color: rgb(34, 34, 34);
   button.demo-button {
     padding: 5px 10px;
     border-radius: 5px;
-    background: transparent;
+    background-color: transparent;
     cursor: pointer;
     border: 1px solid white;
     color: $demo-btn-color;
@@ -267,12 +272,12 @@ $demo-btn-color: rgb(34, 34, 34);
 
 @keyframes ripple {
   0% {
-    box-shadow: 0 0 0 0 rgba($demo-btn-color, 0.3), 0 0 0 1px rgba($demo-btn-color, 0.3),
-      0 0 0 3px rgba($demo-btn-color, 0.3), 0 0 0 5px rgba($demo-btn-color, 0.3);
+    box-shadow: 0 0 0 0 rgba($demo-ripple-btn-color, 0.3), 0 0 0 1px rgba($demo-ripple-btn-color, 0.3),
+      0 0 0 3px rgba($demo-ripple-btn-color, 0.3), 0 0 0 5px rgba($demo-ripple-btn-color, 0.3);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba($demo-btn-color, 0.3), 0 0 0 4px rgba($demo-btn-color, 0.3),
-      0 0 0 10px rgba($demo-btn-color, 0), 0 0 0 5px rgba($demo-btn-color, 0);
+    box-shadow: 0 0 0 0 rgba($demo-ripple-btn-color, 0.3), 0 0 0 4px rgba($demo-ripple-btn-color, 0.3),
+      0 0 0 10px rgba($demo-ripple-btn-color, 0), 0 0 0 5px rgba($demo-ripple-btn-color, 0);
   }
 }
 
@@ -281,4 +286,17 @@ $demo-btn-color: rgb(34, 34, 34);
   width: 100%;
   max-width: 90% !important;
   padding: 0 5px !important;
+}
+
+.visulizations-container {
+  opacity: 0;
+  transform: translateX(-500px);
+  animation: slideLeft 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) 0.2s forwards;
+}
+
+@keyframes slideLeft {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
 }
